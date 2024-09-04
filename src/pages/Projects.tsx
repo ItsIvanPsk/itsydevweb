@@ -1,5 +1,5 @@
-import '../styles/PageMainStyle.css';
-import '../styles/Proyects.css';
+
+import '../styles/pages/Proyects.css';
 
 const Projects = () => {
   return (
@@ -9,7 +9,7 @@ const Projects = () => {
       <section>
         <article>
           <p>
-            Todos los proyectos son propiedad intelectual de ItsyDev.
+            Todos los proyectos son propiedad intelectual de NerivaLabs.
           </p>
         </article>
         <article>

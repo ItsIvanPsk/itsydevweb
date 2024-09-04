@@ -1,4 +1,4 @@
-/* Layout General */
+/* Layout principal */
 .layout {
   display: flex;
   flex-direction: column;
@@ -20,6 +20,7 @@ main {
   flex-grow: 1;
 }
 
+/* Secciones generales */
 section {
   display: flex;
   justify-content: center;
@@ -37,15 +38,27 @@ section {
   flex-direction: column;
 }
 
-.project-article > div > a {
-  display: flex;
-  margin-top: 0.2em;
-}
-
+/* Proyectos */
 .project-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  width: 100%; /* Ajustado a 100% para responsividad */
+  justify-content: space-around; /* Para centrar los proyectos en filas */
+}
+
+.project-container > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* En pantallas pequeñas, ocupar todo el ancho */
+  margin: 1em 0; /* Reducir márgenes en pantallas pequeñas */
+}
+
+.project-container > div > img {
+  height: auto;
+  width: 100%;
+  max-width: 100%; /* Evitar que las imágenes se salgan de su contenedor */
 }
 
 .project-container-title {
@@ -57,32 +70,17 @@ section {
   margin-top: -0.75em;
 }
 
-.project-container > div {
+.project-article > h3 {
+  font-size: 1.75em;
+  margin-top: 2em;
+}
+
+.project-article > div > a {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 39%;
-  margin: 2em 5em;
+  margin-top: 0.2em;
 }
 
-.event-article > div > p {
-  width: 65%;
-}
-
-.event-article > div:first-child{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-
-.project-article > h3,
-.team-article > h3 {
-  font-size: 2em;
-}
-
-.event-gallery,
+/* Equipo */
 .team-container {
   display: flex;
   justify-content: center;
@@ -92,17 +90,10 @@ section {
   width: 100%;
 }
 
-.event-gallery > a > img {
-  width: 100%;
-  max-width: 400px; 
-  padding: 0.5em;
-}
-
 .team-container {
   margin: 2rem 0;
   justify-content: space-around;
   align-items: stretch;
-  
 }
 
 .team-container > div {
@@ -123,8 +114,12 @@ section {
   margin-bottom: 1rem;
 }
 
-.team-container h3 {
-  font-size: 18px;
+.team-article > h3 {
+  font-size: 1.75em;
+}
+
+.team-container > h3 {
+  font-size: 1.75em;
   margin: 0.5rem 0;
 }
 
@@ -141,9 +136,10 @@ section {
   width: 65%;
 }
 
+/* Eventos */
 .event-section,
 .event-article {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -151,15 +147,53 @@ section {
   text-align: center;
 }
 
-.event-gallery {
+.event-article > div > p {
+  width: 90%;
+}
+
+.event-article > div > h3 {
+  font-size: 1.75em;
+}
+
+.event-article > div:first-child {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+}
+
+.event-gallery {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
 }
 
+.event-gallery > a {
+  width: 35%;
+  align-items: center;
+  margin: 0 1.5em;
+}
+
+.event-gallery > a > img {
+  width: 100%;
+  max-width: 400px; 
+  max-height: 400px;
+  height: 18em;
+  padding: 0.5em;
+}
+
+/* Media Queries */
 @media screen and (min-width: 768px) {
+  /* Proyectos */
+  .project-container > div {
+    width: 48%; /* Ocupa aproximadamente la mitad del contenedor en pantallas medianas */
+    margin: 1em;
+  }
+
+  /* Equipo */
   .team-container {
     flex-direction: row;
     justify-content: center;
@@ -183,12 +217,24 @@ section {
     font-size: 16px;
   }
 
+  /* Eventos */
   .event-gallery {
     flex-direction: row;
   }
 }
 
 @media screen and (min-width: 1024px) {
+  /* Proyectos */
+  .project-container > div {
+    width: 45%; /* Ajusta para pantallas más grandes */
+  }
+
+  .project-container > div > img {
+    height: 25em; /* Mantener la altura fija si lo deseas en pantallas grandes */
+    width: auto; /* Ajustar el ancho automáticamente */
+  }
+
+  /* Equipo */
   .team-container > div {
     flex-basis: 22%; /* Ancho consistente en pantallas grandes */
   }

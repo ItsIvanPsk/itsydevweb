@@ -1,7 +1,10 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from '../pages/Home';
-import Projects from '../pages/Projects';
+import '../styles/core/index.css'
 import Navbar from './Navbar';
+import Projects from '../pages/Projects';
+import TinTin60CAT from '../pages/projects/TinTin60Cat';
+import HospitalViladecans from '../pages/projects/HospitalViladecans';
 import Footer from './Footer';
 
 const App = () => {
@@ -10,7 +13,9 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/proyects" element={<Projects />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/titin60cat-vr-experience" element={<TinTin60CAT />} />
+        <Route path="/projects/hospital-viladecans-vr-experience" element={<HospitalViladecans />} />
       </Routes>
       <Footer />
     </Router>
